@@ -14,12 +14,7 @@ angular
   declarations: [AppComponent, WidgetComponent],
   imports: [BrowserModule, UpgradeModule],
   entryComponents: [WidgetComponent],
-  providers: [phoneServiceProvider]
-  // bootstrap: [AppComponent]
+  providers: [phoneServiceProvider],
+  bootstrap: [AppComponent]
 })
-export class AppModule {
-  constructor(private upgrade: UpgradeModule) {}
-  ngDoBootstrap() {
-    this.upgrade.bootstrap(document.body, ['phonecatApp'], { strictDi: true });
-  }
-}
+export class AppModule {}

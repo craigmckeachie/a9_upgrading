@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Injectable } from '@angular/core';
 import { UpgradeModule, downgradeComponent } from '@angular/upgrade/static';
 import { RouterModule, UrlHandlingStrategy } from '@angular/router';
 import { AppComponent } from './app.component';
 import { WidgetComponent } from './widget/widget.component';
 import { phoneServiceProvider } from './phones/shared/phone.service';
 
+@Injectable()
 class CustomUrlHandlingStrategy implements UrlHandlingStrategy {
   shouldProcessUrl(url) {
     return url.toString().startsWith('/widget') || url.toString() === '/';
